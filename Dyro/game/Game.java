@@ -78,4 +78,5 @@ public class Game extends JPanel implements Runnable{
 		Game game = new Game("Dyro",1280,720);
 		
 	}
+	
 }
