@@ -2,6 +2,7 @@ package game;
 
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Toolkit;
 
@@ -39,6 +40,9 @@ public class Game extends JPanel implements Runnable{
 	}
 	
 	public void render(Graphics g) {
+		g.setColor(Color.red);
+		g.setFont(Font.getFont("Calibri"));
+		g.drawString("Testing the method", 540, 200);
 
 	}
 	
@@ -71,7 +75,7 @@ public class Game extends JPanel implements Runnable{
 	}
 	
 	public static void main(String[] args) {
-		Game game = new Game("Dyro",800,640);
+		Game game = new Game("Dyro",1280,720);
 		
 	}
 }
