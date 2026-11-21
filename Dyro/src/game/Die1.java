@@ -8,16 +8,16 @@ import java.util.Random;
 
 import javax.imageio.ImageIO;
 
-public class Dice1 extends Dice {
+public class Die1 extends Dice {
 	
-	BufferedImage image1;
-	BufferedImage image2;
-	BufferedImage image3;
-	BufferedImage image4;
-	BufferedImage image5;
-	BufferedImage image6;
-	final int FACE1X = 0;
-	final int FACE1Y = 0;
+	BufferedImage Black1;
+	BufferedImage Black2;
+	BufferedImage Black3;
+	BufferedImage Black4;
+	BufferedImage Black5;
+	BufferedImage Black6;
+	final int FACE1X = 300;
+	final int FACE1Y = 300;
 	final int FACE2X = 0;
 	final int FACE2Y = 0;
 	final int FACE3X = 0;
@@ -30,14 +30,16 @@ public class Dice1 extends Dice {
 	final int FACE6Y = 0;
 	int[] faces = new int[20];
 	Random r = new Random();
+	int currNumFaces = 6;
 	
 	
-	public Dice1() 
+	public Die1() 
 	{
 		popFaceArray();
+		loadImage();
 	}
 	
-	public Dice1(int face1, int face2, int face3, int face4, int face5, int face6 ) 
+	public Die1(int face1, int face2, int face3, int face4, int face5, int face6 ) 
 	{
 		this.faces[0] = face1;
 		this.faces[1] = face2;
@@ -55,10 +57,6 @@ public class Dice1 extends Dice {
 			this.faces[i] = i;
 		}
 		
-		this.faces[4] = 50;
-		this.faces[9] = 100;
-		this.faces[14] = 500;
-		this.faces[19] = 200;
 	}
 	
 	public int roll(int[] faces) 
@@ -80,12 +78,12 @@ public class Dice1 extends Dice {
 		File imageFile5 = new File("images/Black5.png");
 		File imageFile6 = new File("images/Black6.png");
 		try {
-			this.image1 = ImageIO.read(imageFile1);
-			this.image2 = ImageIO.read(imageFile2);
-			this.image3 = ImageIO.read(imageFile3);
-			this.image4 = ImageIO.read(imageFile4);
-			this.image5 = ImageIO.read(imageFile5);
-			this.image6 = ImageIO.read(imageFile6);
+			this.Black1 = ImageIO.read(imageFile1);
+			this.Black2 = ImageIO.read(imageFile2);
+			this.Black3 = ImageIO.read(imageFile3);
+			this.Black4 = ImageIO.read(imageFile4);
+			this.Black5 = ImageIO.read(imageFile5);
+			this.Black6 = ImageIO.read(imageFile6);
 			
 		} catch (IOException e) {
 			System.out.println("Could not find an image/sprite");
@@ -97,7 +95,7 @@ public class Dice1 extends Dice {
 
 	@Override
 	public void render(Graphics g) {
-		g.drawImage(this.image1,this.FACE1X,this.FACE1Y,null);
+		g.drawImage(this.Black1,this.FACE1X,this.FACE1Y,null);
 		
 	}
 
@@ -348,6 +346,7 @@ public class Dice1 extends Dice {
 	public static void main (String[] args) 
 	{
 		//Dice1 dice1 = new Dice1();
+		//System.out.println(dice1.roll(dice1.faces));
 	}
 	
 }

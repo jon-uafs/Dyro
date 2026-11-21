@@ -15,6 +15,7 @@ public class Game extends JPanel implements Runnable{
 	public boolean running;
 	public Thread gameLoop;
 	Background bg = new Background();
+	Die1 die1 = new Die1();
 	
 	public Game() {}
 	
@@ -41,7 +42,6 @@ public class Game extends JPanel implements Runnable{
 	
 	public void render(Graphics g) {
 		bg.render(g);
-
 	}
 	
 	@Override
